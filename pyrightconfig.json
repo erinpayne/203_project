@@ -1,0 +1,27 @@
+{
+  "pythonVersion": "3.10",
+  "typeCheckingMode": "off",
+  "reportMissingImports": false,
+  "reportMissingTypeStubs": false,
+  "reportMissingModuleSource": false,
+  "reportUnusedImport": false,
+  "reportGeneralTypeIssues": false,
+  "reportOptionalMemberAccess": false,
+  "reportOptionalSubscript": false,
+  "reportOptionalOperand": false,
+  "reportOptionalIterable": false,
+  "reportOptionalContextManager": false,
+  "reportOptionalCallOperand": false,
+  "reportOptionalArgumentType": false,
+  "reportOptionalReturnType": false,
+  "reportOptionalAssignment": false,
+  "reportUnusedVariable": false,
+  "reportUnusedClass": false,
+  "reportUnusedFunction": false,
+  "reportUndefinedVariable": false,
+  "include": ["src/**", "firmware/**"],
+  "exclude": ["**/node_modules", "**/__pycache__", "build", "install", "devel"],
+  "pythonPath": "."
+}
+
+

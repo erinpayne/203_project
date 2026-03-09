@@ -1,0 +1,43 @@
+slam_toolbox:
+  ros__parameters:
+    # Basic SLAM parameters
+    use_scan_matching: true
+    use_loop_closure: true
+    loop_search_max_linear_simple_distance: 4.0
+    loop_search_max_angular_distance_degrees: 270.0
+    
+    # RPLidar specific settings
+    max_laser_range: 12.0
+    minimum_time_interval: 0.5
+    transform_publish_period: 0.02
+    
+    # Scan matcher parameters
+    distance_variance_penalty: 0.5
+    angle_variance_penalty: 1.0
+    fine_search_angle_offset: 0.00349
+    coarse_search_angle_offset: 0.349
+    coarse_angle_resolution: 0.0349
+    minimum_angle_penalty: 0.9
+    minimum_distance_penalty: 0.5
+    use_response_expansion: true
+    
+    # Correlation search space resolution
+    correlation_search_space_dimension: 0.05
+    
+    # Loop closure parameters
+    loop_match_minimum_chain_size: 10
+    maximum_submap_fitness: 0.9
+    
+    # Solver parameters
+    ceres_linear_solver: SPARSE_NORMAL_CHOLESKY
+    ceres_preconditioner: SCHUR_JACOBI
+    ceres_trust_strategy: LEVENBERG_MARQUARDT
+    ceres_dogleg_type: TRADITIONAL_DOGLEG
+    
+    # Frames and topics
+    scan_topic: /scan
+    map_frame: map
+    odom_frame: odom
+    base_frame: base_link
+    map_start_pose: [0.0, 0.0, 0.0]
+    map_start_angle: 0.0

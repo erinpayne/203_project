@@ -1,0 +1,21 @@
+# Robot properties - differential drive configuration
+robot:
+  base_width: 0.2          # Distance between wheel centers (meters)
+  wheel_radius: 0.05       # Wheel radius (meters)
+  wheel_separation: 0.2    # Wheelbase (same as base_width for this config)
+  
+  # Frame sizes
+  base_length: 0.3         # Length of robot body
+  base_height: 0.15        # Height of robot body
+  base_mass: 2.0           # Total robot mass (kg)
+
+# Lidar properties
+lidar:
+  offset_x: 0.0            # X offset from base_link center
+  offset_y: 0.0            # Y offset from base_link center
+  offset_z: 0.1            # Z offset from base_link center (height above base)
+
+# Wheel encoder properties
+encoders:
+  counts_per_revolution: 600  # CPR of encoders
+  wheel_radius: 0.05          # Same as wheel radius above

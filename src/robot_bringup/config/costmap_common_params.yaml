@@ -1,0 +1,28 @@
+/**:
+  ros__parameters:
+    # Differential drive kinematics
+    wheel_separation: 0.2
+    wheel_radius: 0.05
+    max_speed: 1.0
+    max_angular_speed: 2.0
+    accel_limit: 1.0
+    decel_limit: 1.0
+    angular_accel_limit: 2.0
+    
+    # Costmap common parameters
+    footprint: "[[0.15, 0.15], [-0.15, 0.15], [-0.15, -0.15], [0.15, -0.15]]"
+    robot_radius: 0.15
+    resolution: 0.05
+    obstacle_range: 3.0
+    raytrace_range: 3.5
+    
+    # Inflation parameters
+    inflation_radius: 0.55
+    cost_scaling_factor: 3.0
+    
+    # Update and publish frequencies
+    update_frequency: 5.0
+    publish_frequency: 1.0
+    
+    # Scan topic (from RPLidar)
+    scan_topic: /scan
