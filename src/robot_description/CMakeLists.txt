@@ -11,5 +11,6 @@ find_package(rosidl_default_generators REQUIRED)
 # Install URDF files
 install(DIRECTORY urdf DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY rviz DESTINATION share/${PROJECT_NAME})
 
 ament_package()

@@ -10,6 +10,7 @@ from launch_ros.parameter_descriptions import ParameterValue
 def generate_launch_description():
     robot_description_path = get_package_share_directory('robot_description')
     urdf_path = os.path.join(robot_description_path, 'urdf', 'robot.urdf.xacro')
+    rviz_config_path = os.path.join(robot_description_path, 'rviz', 'robot.rviz')
 
     robot_description_content = ParameterValue(
         Command(['xacro ', urdf_path]),
@@ -22,18 +23,23 @@ def generate_launch_description():
             default_value='false',
             description='Use simulation (Gazebo) clock if true'
         ),
+        # Robot State Publisher - broadcasts robot TF
         Node(
             package='robot_state_publisher',
             executable='robot_state_publisher',
             parameters=[
                 {'robot_description': robot_description_content},
                 {'use_sim_time': LaunchConfiguration('use_sim_time')},
-            ]
+            ],
+            output='screen'
         ),
+        # RViz2 for visualization
         Node(
             package='rviz2',
             executable='rviz2',
-            arguments=['-d', os.path.join(robot_description_path, 'rviz', 'robot.rviz')],
-            condition=None  # Remove or add condition to prevent auto-launch if desired
+            name='rviz2',
+            arguments=['-d', rviz_config_path],
+            output='screen'
         ),
     ])
+
